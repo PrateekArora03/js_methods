@@ -22,7 +22,7 @@ var strings = ["this", "is", "a", "collection", "of", "words"];
 //  Sort Array from smallest to largest
 
 // Remove the last word in strings
-
+strings.pop();
 // Add a new word in the array
 
 // Remove the first word in the array
