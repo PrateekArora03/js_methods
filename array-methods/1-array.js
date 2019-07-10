@@ -9,6 +9,7 @@ var strings = ["this", "is", "a", "collection", "of", "words"];
 // Find longest string in strings
 
 // Find all the even numbers
+//numbers.filter((num)=>num%2==0)
 
 // Find all the odd numbers
 
