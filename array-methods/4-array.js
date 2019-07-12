@@ -28,8 +28,8 @@ var data = [
 
 // write a function that will sum all of the dogs ages in dog years using for loop.
 // 1 human year = 7 dog year
+// your code goes here
 // Solution is 105
-
 var age = 0;
 var dogAge = obj => {
   obj.forEach(i => {
