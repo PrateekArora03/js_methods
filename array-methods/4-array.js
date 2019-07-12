@@ -1,28 +1,28 @@
 var data = [
   {
-    name: 'Butters',
+    name: "Butters",
     age: 3,
-    type: 'dog'
+    type: "dog"
   },
   {
-    name: 'Lizzy',
+    name: "Lizzy",
     age: 6,
-    type: 'dog'
+    type: "dog"
   },
   {
-    name: 'Red',
+    name: "Red",
     age: 1,
-    type: 'cat'
+    type: "cat"
   },
   {
-    name: 'Joey',
+    name: "Joey",
     age: 3,
-    type: 'dog'
+    type: "dog"
   },
-   {
-    name: 'Pochi',
+  {
+    name: "Pochi",
     age: 3,
-    type: 'dog'
+    type: "dog"
   }
 ];
 
@@ -30,9 +30,23 @@ var data = [
 // 1 human year = 7 dog year
 // Solution is 105
 
+var age = 0;
+var dogAge = obj => {
+  obj.forEach(i => {
+    if (i.type == "dog") age += i.age;
+  });
+  age *= 7;
+  console.log(age);
+};
 
 // Write the same function using
 // 1. filter - for filtering the cat or dog
 // 2. map - to multiply human year to dog year
 // 3. reduce - to accumulate total age.
 // Solution 105
+function dogAge(obj) {
+  var dogType = obj.filter(n => n.type == "dog");
+  var dogAge = dogType.map(n => (n.age *= 7));
+  var totalAge = dogAge.reduce((x, y) => x + y);
+  totalAge *= 7;
+}

@@ -31,7 +31,6 @@ var storeIs = strings.filter(num => num.includes("is"));
 console.log(storeIs);
 
 // Find all the words that contain 'is' use string method 'indexOf'
-// console.log(strings.indexOf('is'));
 let iscontain = [];
 strings.forEach(num => {
   if (num.indexOf("is") >= 0) iscontain.push(num); //1 is word in the string 0 if find same element -1 word not found in string
