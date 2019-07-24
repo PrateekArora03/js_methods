@@ -14,8 +14,12 @@ var words = [
 
 // Write a function uniqueArray that receives an array of words as a parameter. And remove the duplicates, and return a new array.
 // (indexOf)
-function uniqueArray() {
+function uniqueArray(word) {
   let arr = [];
+  for (var i of word) {
+    if (arr.indexOf(i) < 0) arr.push(i);
+  }
+  return arr;
 }
 
 var words2 = [
@@ -30,6 +34,9 @@ var words2 = [
 ];
 
 // Write a function doesWordExist that will take in an array of words as one argument, and a word to search for as the other. Return true if it exists, otherwise, return false. Don't use indexOf for this one.
+function doesWordExist(words, searchWord) {
+  return words.includes(searchWord);
+}
 
 var words3 = [
   "machine",
@@ -46,6 +53,14 @@ var words3 = [
 ];
 
 // Write a function howManyTimes that will take in an array of words as one argument, and a word to search for as the other. The function will return the number of times that word appears in the array.
+function howManyTimes(arr, find) {
+  count = 0;
+  for (var i of arr) {
+    count += i == find ? 1 : 0;
+  }
+  return count;
+}
+howManyTimes(words3, "matter");
 
 // Using the reduce() method, how would you sum up the population of every country except China?
 let data = [
@@ -66,7 +81,10 @@ let data = [
     pop: 263991379
   }
 ];
-
+data.reduce((acc, cv) => {
+  acc += cv.country != "China" ? cv.pop : 0;
+  return acc;
+}, 0);
 // Use reduce method and summorize the collection like
 // { banana: 2, cherry: 3, orange: 3, apple: 2, fig: 1 }
 const fruitBasket = [
@@ -82,6 +100,14 @@ const fruitBasket = [
   "orange",
   "fig"
 ];
+fruitBasket.reduce((acc, cv, index, arr) => {
+  if (acc[cv]) {
+    acc[cv]++;
+  } else {
+    acc[cv] = 1;
+  }
+  return acc;
+}, {});
 
 // Bonus Question (Solve only if you have time)
 var matrix = [
